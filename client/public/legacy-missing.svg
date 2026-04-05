@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#2b2f36"/>
+  <rect x="24" y="24" width="752" height="452" rx="16" fill="#1c2026" stroke="#3a404a" stroke-width="4"/>
+  <path d="M80 360 L260 200 L380 320 L520 160 L720 360" fill="none" stroke="#586174" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="260" cy="200" r="14" fill="#586174"/>
+  <circle cx="520" cy="160" r="14" fill="#586174"/>
+  <text x="50%" y="62%" dominant-baseline="middle" text-anchor="middle" fill="#cbd5e1" font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif" font-size="28">
+    Image missing in local mirror
+  </text>
+</svg>
+

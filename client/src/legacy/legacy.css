@@ -1,0 +1,24 @@
+.legacyShell {
+  /* Let Squarespace CSS control layout; do not constrain width. */
+  width: 100%;
+}
+
+.legacy {
+  /* Prevent legacy layouts from stretching to viewport edge inside our centered main container. */
+  width: 100%;
+}
+
+.legacy :where(img, video) {
+  max-width: 100%;
+  height: auto;
+}
+
+.legacy :where(a) {
+  word-break: break-word;
+}
+
+.legacyAfter {
+  margin: 24px auto;
+  max-width: 1000px;
+  padding: 0 20px;
+}

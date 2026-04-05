@@ -1,0 +1,101 @@
+/* Loaded after legacy Squarespace CSS to fix common local-render issues. */
+
+/* Dark scrollbar without forcing page background colors. */
+html {
+  scrollbar-color: #5b6472 #1b1f26;
+}
+
+/* Chromium / Edge */
+*::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+*::-webkit-scrollbar-track {
+  background: #1b1f26;
+}
+*::-webkit-scrollbar-thumb {
+  background: #5b6472;
+  border-radius: 999px;
+  border: 3px solid #1b1f26;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: #6b7584;
+}
+
+/* Make the mobile menu overlay not affect document flow. */
+.header-menu {
+  position: fixed !important;
+  inset: 0 !important;
+  height: 100vh !important;
+  overflow: auto !important;
+  z-index: 10000 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transform: translateY(-6px) !important;
+  transition:
+    opacity 140ms ease-out,
+    transform 140ms ease-out,
+    visibility 0s linear 140ms !important;
+}
+
+body.legacy-menu-open {
+  overflow: hidden;
+}
+
+body.legacy-menu-open .header-menu {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  transform: translateY(0) !important;
+  transition:
+    opacity 140ms ease-out,
+    transform 140ms ease-out,
+    visibility 0s linear 0s !important;
+}
+
+body.legacy-menu-open .header-menu-nav,
+body.legacy-menu-open .header-menu-nav-list,
+body.legacy-menu-open .header-menu-nav-folder,
+body.legacy-menu-open .header-menu-nav-folder-content,
+body.legacy-menu-open .header-menu-nav-wrapper {
+  display: block !important;
+}
+
+/* Avoid a tiny right-edge cutoff on some dividers in local preview. */
+.section-divider-svg-clip,
+.section-divider-svg-stroke {
+  width: 102% !important;
+  margin-left: -1% !important;
+}
+
+/* Prevent the blur overlay layer from sitting above header content. */
+.header-blur-background {
+  z-index: 0 !important;
+  pointer-events: none;
+}
+
+.header-inner,
+.header-display-desktop,
+.header-display-mobile,
+.header-title-nav-wrapper,
+.header-nav,
+.header-actions,
+.header-menu {
+  position: relative;
+  z-index: 2;
+}
+
+/* If the logo overlaps nav on some breakpoints, keep it behind nav. */
+.header-title-logo,
+.header-mobile-logo {
+  position: relative;
+  z-index: 1;
+}
+
+/* Avoid accidental blur/filters on the logo/title. */
+.header-title,
+.header-title img,
+.header-title picture {
+  filter: none !important;
+}

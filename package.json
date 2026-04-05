@@ -1,0 +1,17 @@
+{
+  "name": "kineticspeech",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w client",
+    "build": "npm run build -w client",
+    "preview": "npm run preview -w client",
+    "start": "npm start -w server",
+    "db:migrate": "npm run db:migrate -w server",
+    "gen:redirects": "node scripts/generate-redirects.mjs",
+    "legacy:preview": "node scripts/build-legacy-preview.mjs"
+  }
+}

@@ -1,0 +1,139 @@
+:root {
+  --bg: #0c0f14;
+  --card: #121723;
+  --text: #e9eef7;
+  --muted: rgba(233, 238, 247, 0.75);
+  --brand: #9ad7ff;
+  --border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: #111111;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+body.legacy-mode {
+  background: initial;
+  color: initial;
+  font-family: initial;
+  line-height: initial;
+}
+
+body:not(.legacy-mode) a {
+  color: var(--brand);
+  text-decoration: none;
+}
+body:not(.legacy-mode) a:hover {
+  text-decoration: underline;
+}
+
+body:not(.legacy-mode) code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+    monospace;
+}
+
+body:not(.legacy-mode) .app {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+body:not(.legacy-mode) .header {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(18, 23, 35, 0.65);
+  backdrop-filter: blur(10px);
+}
+
+body:not(.legacy-mode) .brand a {
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+body:not(.legacy-mode) .nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+body:not(.legacy-mode) .main {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 28px 20px 40px;
+}
+
+body:not(.legacy-mode) .pageTitle {
+  margin: 0 0 14px;
+  font-size: 32px;
+  line-height: 1.15;
+}
+
+body:not(.legacy-mode) .footer {
+  padding: 18px 20px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+}
+
+body:not(.legacy-mode) .form {
+  display: grid;
+  gap: 12px;
+  max-width: 560px;
+  background: rgba(18, 23, 35, 0.6);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+}
+
+body:not(.legacy-mode) label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+body:not(.legacy-mode) input,
+body:not(.legacy-mode) textarea {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(12, 15, 20, 0.7);
+  color: var(--text);
+  font-size: 16px;
+}
+
+body:not(.legacy-mode) button {
+  cursor: pointer;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(154, 215, 255, 0.35);
+  background: rgba(154, 215, 255, 0.15);
+  color: var(--text);
+  font-weight: 700;
+}
+
+body:not(.legacy-mode) .success {
+  margin: 0;
+  color: #a7f3d0;
+}
+
+body:not(.legacy-mode) .error {
+  margin: 0;
+  color: #fca5a5;
+}

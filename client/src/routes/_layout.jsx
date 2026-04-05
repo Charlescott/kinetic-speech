@@ -1,26 +1,21 @@
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import SiteFooter from "../components/SiteFooter.jsx";
+import SiteHeader from "../components/SiteHeader.jsx";
 
 export default function Layout({ title, children }) {
+  useEffect(() => {
+    document.body.className = "";
+    document.body.id = "";
+  }, []);
+
   return (
-    <div className="app">
-      <header className="header">
-        <div className="brand">
-          <Link to="/">Kinetic Speech</Link>
-        </div>
-        <nav className="nav">
-          <Link to="/about-us">About</Link>
-          <Link to="/our-services">Services</Link>
-          <Link to="/team">Team</Link>
-          <Link to="/blog">Blog</Link>
-          <Link to="/contact-us">Contact</Link>
-          <Link to="/book-appointment">Book</Link>
-        </nav>
-      </header>
-      <main className="main">
+    <div className="siteShell">
+      <SiteHeader />
+      <main className="siteMain">
         {title ? <h1 className="pageTitle">{title}</h1> : null}
         {children}
       </main>
-      <footer className="footer">© {new Date().getFullYear()} Kinetic Speech Services, PLLC</footer>
+      <SiteFooter />
     </div>
   );
 }

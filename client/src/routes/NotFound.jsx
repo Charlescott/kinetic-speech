@@ -1,3 +1,9 @@
+import Layout from "./_layout.jsx";
+
 export default function NotFound() {
-  return <p>That page doesn’t exist.</p>;
+  return (
+    <Layout title="Page not found">
+      <p>That page doesn’t exist.</p>
+    </Layout>
+  );
 }

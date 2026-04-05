@@ -1,9 +1,13 @@
 import { useEffect, useRef } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import useLegacyStyles from "./useLegacyStyles.js";
 import { setTitleAndDescription } from "../lib/seo.js";
+import { hydrateLegacyContent, normalizeLegacyHref, setLegacyMenuOpen } from "./runtime.js";
 
 export default function LegacyPage({ page, titleOverride, childrenAfter }) {
   const shellRef = useRef(null);
+  const navigate = useNavigate();
+  const location = useLocation();
   useLegacyStyles(page?.stylesheets);
 
   useEffect(() => {
@@ -30,31 +34,76 @@ export default function LegacyPage({ page, titleOverride, childrenAfter }) {
     };
   }, [page]);
 
-  if (!page) {
-    return <p>Legacy content was not found for this page.</p>;
-  }
+  useEffect(() => {
+    setLegacyMenuOpen(false);
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   useEffect(() => {
     const root = shellRef.current;
-    if (!root) return;
+    if (!page || !root) return;
+    hydrateLegacyContent(root);
 
-    // Squarespace sometimes lazy-loads by keeping the real URL in data-src / data-srcset.
-    for (const img of root.querySelectorAll("img[data-src]")) {
-      const dataSrc = img.getAttribute("data-src");
-      if (!dataSrc) continue;
-      const src = img.getAttribute("src");
-      if (!src || src.startsWith("data:")) {
-        img.setAttribute("src", dataSrc);
-      }
-    }
+    const timeoutId = window.setTimeout(() => hydrateLegacyContent(root), 250);
 
-    for (const source of root.querySelectorAll("source[data-srcset]")) {
-      const dataSrcset = source.getAttribute("data-srcset");
-      if (!dataSrcset) continue;
-      const srcset = source.getAttribute("srcset");
-      if (!srcset) source.setAttribute("srcset", dataSrcset);
-    }
-  }, [page]);
+    const onClick = (event) => {
+      const anchor = event.target instanceof Element ? event.target.closest("a[href]") : null;
+      if (!anchor) return;
+      if (anchor.target && anchor.target !== "_self") return;
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      if (anchor.hasAttribute("download")) return;
+
+      const nextHref = normalizeLegacyHref(anchor.getAttribute("href"));
+      if (!nextHref) return;
+      if (nextHref === `${location.pathname}${location.search}${location.hash}`) return;
+
+      event.preventDefault();
+      setLegacyMenuOpen(false);
+      navigate(nextHref);
+    };
+
+    const onKeyDown = (event) => {
+      if (event.key === "Escape") setLegacyMenuOpen(false);
+    };
+
+    const onBurgerClick = (event) => {
+      const burger = event.target instanceof Element ? event.target.closest(".header-burger-btn") : null;
+      if (!burger) return;
+      event.preventDefault();
+      event.stopPropagation();
+      if (typeof event.stopImmediatePropagation === "function") event.stopImmediatePropagation();
+      const isOpen = document.body.classList.contains("legacy-menu-open");
+      setLegacyMenuOpen(!isOpen);
+    };
+
+    const onImageError = (event) => {
+      const image = event.target;
+      if (!(image instanceof HTMLImageElement)) return;
+      const src = image.getAttribute("src") || "";
+      if (!src.startsWith("/legacy/")) return;
+      image.setAttribute("src", "/legacy-missing.svg");
+      image.removeAttribute("srcset");
+      image.removeAttribute("data-src");
+      image.removeAttribute("data-srcset");
+    };
+
+    root.addEventListener("click", onClick);
+    root.addEventListener("click", onBurgerClick, true);
+    root.addEventListener("error", onImageError, true);
+    document.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      window.clearTimeout(timeoutId);
+      root.removeEventListener("click", onClick);
+      root.removeEventListener("click", onBurgerClick, true);
+      root.removeEventListener("error", onImageError, true);
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, [location.hash, location.pathname, location.search, navigate, page]);
+
+  if (!page) {
+    return <p>Legacy content was not found for this page.</p>;
+  }
 
   return (
     <div ref={shellRef} className="legacyShell" aria-label="Legacy page shell">

@@ -20,19 +20,20 @@ export default function Home() {
         <div className="homeHero__content">
           <p className="homeHero__eyebrow">{homeContent.intro.eyebrow}</p>
           <h1 className="homeHero__title">{homeContent.intro.title}</h1>
-          <p className="homeHero__description">{homeContent.intro.description}</p>
+          <p className="homeHero__description">
+            {homeContent.intro.description}
+          </p>
           <div className="homeHero__actions">
             <Link to="/contact-us" className="siteButton">
               Contact Us
             </Link>
-            <Link to="/our-services" className="siteButton siteButton--secondary">
+            <Link
+              to="/our-services"
+              className="siteButton siteButton--secondary"
+            >
               Our Services
             </Link>
           </div>
-        </div>
-
-        <div className="homeHero__imageWrap">
-          <img src={homeContent.intro.image} alt="Tiffany Fairdosi" className="homeHero__image" />
         </div>
       </section>
 
@@ -57,7 +58,11 @@ export default function Home() {
 
       <section className="imageCtaBand">
         <div className="imageCtaBand__imageWrap">
-          <img src={homeContent.waveImage} alt="" className="imageCtaBand__image" />
+          <img
+            src={homeContent.waveImage}
+            alt=""
+            className="imageCtaBand__image"
+          />
           <WaveDivider className="imageCtaBand__divider" />
         </div>
       </section>

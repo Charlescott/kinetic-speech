@@ -24,7 +24,11 @@ export default function About() {
 
         <div className="aboutHero__grid">
           <div className="aboutHero__imageWrap">
-            <img src={aboutContent.image} alt="Tiffany Fairdosi" className="aboutHero__image" />
+            <img
+              src={aboutContent.image}
+              alt="Tiffany Fairdosi"
+              className="aboutHero__image"
+            />
           </div>
 
           <div className="aboutHero__body">
@@ -64,7 +68,11 @@ export default function About() {
 
       <section className="imageCtaBand">
         <div className="imageCtaBand__imageWrap">
-          <img src={aboutContent.image} alt="" className="imageCtaBand__image imageCtaBand__image--portrait" />
+          <img
+            src={aboutContent.bandImage}
+            alt=""
+            className="imageCtaBand__image"
+          />
           <WaveDivider className="imageCtaBand__divider" />
         </div>
       </section>

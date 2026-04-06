@@ -15,16 +15,18 @@ export default function Services() {
     });
   }, []);
 
-  const gettingStartedItems = servicesContent.gettingStarted.steps.map((step) => ({
-    title: step.title,
-    content: (
-      <div className="accordionBody">
-        {step.body.map((paragraph) => (
-          <p key={paragraph}>{paragraph}</p>
-        ))}
-      </div>
-    ),
-  }));
+  const gettingStartedItems = servicesContent.gettingStarted.steps.map(
+    (step) => ({
+      title: step.title,
+      content: (
+        <div className="accordionBody">
+          {step.body.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+        </div>
+      ),
+    }),
+  );
 
   return (
     <Layout>
@@ -32,7 +34,9 @@ export default function Services() {
         <div className="servicesHero__heading">
           <p className="pageEyebrow">{servicesContent.title}</p>
           <h1 className="servicesHero__title">{servicesContent.intro.title}</h1>
-          <p className="servicesHero__description">{servicesContent.intro.description}</p>
+          <p className="servicesHero__description">
+            {servicesContent.intro.description}
+          </p>
         </div>
       </section>
 
@@ -46,7 +50,11 @@ export default function Services() {
         </div>
 
         <div className="servicesProcess__accordionWrap">
-          <Accordion items={gettingStartedItems} className="servicesAccordion" defaultOpenIndex={0} />
+          <Accordion
+            items={gettingStartedItems}
+            className="servicesAccordion"
+            defaultOpenIndex={0}
+          />
         </div>
       </section>
 
@@ -65,9 +73,15 @@ export default function Services() {
                   <li key={item}>{item}</li>
                 ))}
               </ul>
-              {group.note ? <p className="servicesCard__note">{group.note}</p> : null}
+              {group.note ? (
+                <p className="servicesCard__note">{group.note}</p>
+              ) : null}
               {group.image ? (
-                <img src={group.image} alt={`${group.title} flyer`} className="servicesCard__image" />
+                <img
+                  src={group.image}
+                  alt={`${group.title} flyer`}
+                  className="servicesCard__image"
+                />
               ) : null}
             </article>
           ))}
@@ -77,7 +91,18 @@ export default function Services() {
       <section className="imageCtaBand">
         <div className="imageCtaBand__imageWrap">
           <img
-            src="/legacy/images.squarespace-cdn.com/content/v1/644281148cd62262058dd198/b6aecf21-ecc8-49f0-bde7-4b9901396390/unsplash-image-XjlyFT-ibd0.jpg"
+            src={servicesContent.bandImage}
+            alt=""
+            className="imageCtaBand__image"
+          />
+          <WaveDivider className="imageCtaBand__divider" />
+        </div>
+      </section>
+
+      <section className="imageCtaBand">
+        <div className="imageCtaBand__imageWrap">
+          <img
+            src={servicesContent.bandImage2}
             alt=""
             className="imageCtaBand__image"
           />
@@ -92,7 +117,10 @@ export default function Services() {
           <Link to={servicesContent.cta.primaryHref} className="siteButton">
             {servicesContent.cta.primaryLabel}
           </Link>
-          <Link to={servicesContent.cta.secondaryHref} className="siteButton siteButton--secondary">
+          <Link
+            to={servicesContent.cta.secondaryHref}
+            className="siteButton siteButton--secondary"
+          >
             {servicesContent.cta.secondaryLabel}
           </Link>
         </div>

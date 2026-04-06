@@ -10,7 +10,12 @@ export const siteNav = [
 
 export const siteContact = {
   officeName: "Kinetic Speech Services, PLLC",
-  addressLines: ["2880 Broadway Bend Dr", "Building 3", "Offices 101/102", "Pearland, TX 77584"],
+  addressLines: [
+    "2880 Broadway Bend Dr",
+    "Building 3",
+    "Offices 101/102",
+    "Pearland, TX 77584",
+  ],
   officePhone: "(832) 278-1955",
   fax: "1-877-920-2116",
   email: "office@kineticspeech.com",
@@ -33,10 +38,12 @@ export const socialLinks = [
 export const homeContent = {
   intro: {
     eyebrow: "Speech-language support for children and adults",
-    title: "Helping clients build confidence through personalized speech therapy.",
+    title:
+      "Helping clients build confidence through personalized speech therapy.",
     description:
       "Tiffany Fairdosi, M.S., CCC-SLP, provides individualized evaluations and therapy in Pearland and through telepractice.",
-    image: "/legacy/images.squarespace-cdn.com/content/v1/644281148cd62262058dd198/acb9b936-527e-45c7-8598-69f259ec155d/Tiffany+Fairdosi-45-Edit.jpg",
+    image:
+      "/legacy/images.squarespace-cdn.com/content/v1/644281148cd62262058dd198/acb9b936-527e-45c7-8598-69f259ec155d/Tiffany+Fairdosi-45-Edit.jpg",
   },
   servicesTitle: "Kinetic Speech Services, PLLC Provides:",
   services: [
@@ -65,7 +72,8 @@ export const homeContent = {
     "/legacy/images.squarespace-cdn.com/content/v1/644281148cd62262058dd198/1682310513097-P5Z00UFDLS8VM5JVALGQ/unsplash-image-LQ1t-8Ms5PY.jpg",
   cta: {
     title: "Ready to start? Let’s talk!",
-    description: "We verify insurance benefits and eligibility for BCBS and UHC.",
+    description:
+      "We verify insurance benefits and eligibility for BCBS and UHC.",
     buttonLabel: "Contact Us",
     buttonHref: "/contact-us",
   },
@@ -76,6 +84,8 @@ export const aboutContent = {
   introTitle: "Meet Tiffany Fairdosi, M.S., CCC-SLP",
   image:
     "/legacy/images.squarespace-cdn.com/content/v1/644281148cd62262058dd198/acb9b936-527e-45c7-8598-69f259ec155d/Tiffany+Fairdosi-45-Edit.jpg",
+  bandImage:
+    "https://images.unsplash.com/photo-1771765767087-ce71e4a7916a?w=1200&h=400&fit=crop",
   paragraphs: [
     "Kinetic Speech Services, PLLC is privately owned and operated by Tiffany Fairdosi, M.S., CCC-SLP. Tiffany has over 10 years of experience as a speech-language pathologist (SLP) with extensive knowledge and experience in acute and inpatient rehabilitation hospitals, skilled nursing facilities, assisted living facilities, outpatient, and private practice. Before becoming a licensed SLP, she worked as a graduate assistant and SLP assistant in early childhood intervention.",
     "She was awarded her Masters of Business Administration from Lamar University in May 2024. She received her undergraduate degree in chemistry from Texas Tech University in 2010 and her Masters of Science degree from Texas Tech University Health Sciences Center in 2013. She is certified by the American Speech, Language, and Hearing Association (ASHA) and is licensed in the state of Texas.",
@@ -114,7 +124,8 @@ export const aboutContent = {
   ],
   cta: {
     title: "Ready to start? Let’s talk!",
-    description: "We verify insurance benefits and eligibility for BCBS and UHC.",
+    description:
+      "We verify insurance benefits and eligibility for BCBS and UHC.",
     buttonLabel: "Contact Us",
     buttonHref: "/contact-us",
   },
@@ -195,7 +206,8 @@ export const servicesContent = {
     },
     {
       title: "Individual Therapy",
-      description: "Therapy sessions are provided one on one in the office or via telepractice to in-state residents.",
+      description:
+        "Therapy sessions are provided one on one in the office or via telepractice to in-state residents.",
       items: [
         "Articulation and speech sound production",
         "Dysphagia and swallow support",
@@ -222,18 +234,22 @@ export const servicesContent = {
   ],
   cta: {
     title: "Ready to get scheduled?",
-    description: "Book an appointment or reach out with questions and we’ll help you find the right next step.",
+    description:
+      "Book an appointment or reach out with questions and we’ll help you find the right next step.",
     primaryLabel: "Book An Appointment",
     primaryHref: "/book-appointment",
     secondaryLabel: "Contact Us",
     secondaryHref: "/contact-us",
   },
+  bandImage:
+    "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&h=500&fit=crop",
 };
 
 export const teamContent = {
   title: "Team",
   hero: {
-    title: "We’re a small team with big ideas and a passion for doing things well.",
+    title:
+      "We’re a small team with big ideas and a passion for doing things well.",
     description: "I am excited to be expanding my team as this practice grows!",
     image:
       "/legacy/images.squarespace-cdn.com/content/v1/5ec321c2af33de48734cc929/f3dcefac-6b56-4f80-be43-9a353a7c6a77/imgg-demo-Aq8H491F.jpg",
@@ -271,7 +287,8 @@ export const teamContent = {
           "Licensed, CF, and assistants are encouraged to apply.",
         ],
         actionLabel: "Apply Here",
-        actionHref: "https://www.indeed.com/viewjob?jk=200304b88548d563&from=shareddesktop_copy",
+        actionHref:
+          "https://www.indeed.com/viewjob?jk=200304b88548d563&from=shareddesktop_copy",
         isExternal: true,
       },
       {
@@ -289,10 +306,13 @@ export const teamContent = {
   },
   cta: {
     title: "Interested in joining the Kinetic Speech team?",
-    description: "Reach out to talk through openings, growth opportunities, or office space options.",
+    description:
+      "Reach out to talk through openings, growth opportunities, or office space options.",
     buttonLabel: "Contact Us",
     buttonHref: "/contact-us",
   },
+  bandImage:
+    "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&h=400&fit=crop",
 };
 
 export const contactContent = {
@@ -335,18 +355,25 @@ export const bookingContent = {
   title: "Book an Appointment",
   intro: {
     title: "Book an appointment",
-    description: "Give us a call to schedule an evaluation or click below to get started.",
+    description:
+      "Give us a call to schedule an evaluation or click below to get started.",
   },
-  acceptedPlans: ["Medicare Part B", "Blue Cross Blue Shield", "United Healthcare"],
+  acceptedPlans: [
+    "Medicare Part B",
+    "Blue Cross Blue Shield",
+    "United Healthcare",
+  ],
   notes: [
     "Payment is due at the time of service.",
     "For out-of-network services, we provide a superbill and do not submit reimbursements on your behalf.",
     "We make no guarantees that services will be reimbursed, as insurance providers and plans may differ.",
   ],
-  schedulingNote: "Please reach out to (832) 278-1955 to schedule your appointment with us.",
+  schedulingNote:
+    "Please reach out to (832) 278-1955 to schedule your appointment with us.",
   cta: {
     title: "Ready to start? Let’s talk!",
-    description: "We verify insurance benefits and eligibility for BCBS and UHC.",
+    description:
+      "We verify insurance benefits and eligibility for BCBS and UHC.",
     primaryLabel: "Contact Us",
     primaryHref: "/contact-us",
     secondaryLabel: "Call (832) 278-1955",

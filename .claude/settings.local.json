@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:api.unsplash.com)",
+      "WebSearch",
+      "WebFetch(domain:images.unsplash.com)",
+      "WebFetch(domain:source.unsplash.com)",
+      "WebFetch(domain:unsplash.com)",
+      "WebFetch(domain:www.pluralsight.com)",
+      "Bash(curl -s -I \"https://images.unsplash.com/photo-1-yi7BJD0eI?auto=format&fit=crop&w=100&q=10\")",
+      "WebFetch(domain:tutorials.sitecast.com)",
+      "WebFetch(domain:splashfinder.app)",
+      "WebFetch(domain:www.lemonandthesea.com)",
+      "Bash(curl -s -L -o /dev/null -w \"%{url_effective}\\\\n%{http_code}\" \"https://images.unsplash.com/photo-K_MSe-zglGI?auto=format&w=10\")",
+      "Bash(python3 -c \"import sys,json; data=json.load\\(sys.stdin\\); [print\\(p['id'], p['urls'].get\\('regular',''\\)[:100]\\) for p in data.get\\('results',[]\\)]\")",
+      "Bash(ls -la /tmp/unsplash_check/*.jpg)",
+      "WebFetch(domain:www.kineticspeech.com)"
+    ]
+  }
+}

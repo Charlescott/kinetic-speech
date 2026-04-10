@@ -18,27 +18,7 @@ export default function Team() {
     <Layout>
       <section className="teamHero pageSection">
         <div className="teamHero__heading">
-          <p className="pageEyebrow">{teamContent.title}</p>
           <h1 className="teamHero__title">{teamContent.hero.title}</h1>
-          <p className="teamHero__description">
-            {teamContent.hero.description}
-          </p>
-          <div className="homeHero__actions">
-            <a href="#join-our-team" className="siteButton">
-              View Opportunities
-            </a>
-            <Link to="/contact-us" className="siteButton siteButton--secondary">
-              Contact Us
-            </Link>
-          </div>
-        </div>
-
-        <div className="teamHero__imageWrap">
-          <img
-            src={teamContent.hero.image}
-            alt=""
-            className="teamHero__image"
-          />
         </div>
       </section>
 
@@ -112,15 +92,8 @@ export default function Team() {
         </div>
       </section>
 
-      <section className="imageCtaBand">
-        <div className="imageCtaBand__imageWrap">
-          <img
-            src={teamContent.bandImage}
-            alt=""
-            className="imageCtaBand__image"
-          />
-          <WaveDivider className="imageCtaBand__divider" />
-        </div>
+      <section className="waveDividerBand">
+        <WaveDivider className="waveDividerBand__divider" />
       </section>
 
       <section className="homeCta">

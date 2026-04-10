@@ -16,36 +16,18 @@ export default function Home() {
 
   return (
     <Layout>
-      <section className="homeHero">
-        <div className="homeHero__content">
-          <p className="homeHero__eyebrow">{homeContent.intro.eyebrow}</p>
-          <h1 className="homeHero__title">{homeContent.intro.title}</h1>
-          <p className="homeHero__description">
-            {homeContent.intro.description}
-          </p>
-          <div className="homeHero__actions">
-            <Link to="/contact-us" className="siteButton">
-              Contact Us
-            </Link>
-            <Link
-              to="/our-services"
-              className="siteButton siteButton--secondary"
-            >
-              Our Services
-            </Link>
-          </div>
-        </div>
-      </section>
-
       <section className="servicesOverview">
         <div className="sectionHeading">
-          <p>Kinetic Speech Services, PLLC Provides:</p>
+          <p>{homeContent.servicesTitle}</p>
         </div>
 
         <div className="servicesGrid">
           {homeContent.services.map((service) => (
             <article key={service.title} className="serviceCard">
               <h2>{service.title}</h2>
+              {service.description ? (
+                <p>{service.description}</p>
+              ) : null}
               <ul>
                 {service.items.map((item) => (
                   <li key={item}>{item}</li>

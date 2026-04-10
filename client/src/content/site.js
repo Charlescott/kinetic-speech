@@ -36,19 +36,13 @@ export const socialLinks = [
 ];
 
 export const homeContent = {
-  intro: {
-    eyebrow: "Speech-language support for children and adults",
-    title:
-      "Helping clients build confidence through personalized speech therapy.",
-    description:
-      "Tiffany Fairdosi, M.S., CCC-SLP, provides individualized evaluations and therapy in Pearland and through telepractice.",
-    image:
-      "/legacy/images.squarespace-cdn.com/content/v1/644281148cd62262058dd198/acb9b936-527e-45c7-8598-69f259ec155d/Tiffany+Fairdosi-45-Edit.jpg",
-  },
+  intro: {},
   servicesTitle: "Kinetic Speech Services, PLLC Provides:",
   services: [
     {
       title: "Evaluations",
+      description:
+        "1:1 evaluations addressing:",
       items: [
         "Articulation and speech intelligibility",
         "Language processing and understanding",
@@ -59,6 +53,8 @@ export const homeContent = {
     },
     {
       title: "Individual Therapy",
+      description:
+        "After completion of a comprehensive evaluation, individualized therapy sessions\nare tailored to your needs.",
       items: [
         "Speech sound production and intelligibility",
         "Following directions",
@@ -134,14 +130,14 @@ export const aboutContent = {
 export const servicesContent = {
   title: "Our Services",
   intro: {
-    title: "Personalized speech, language, and swallowing support",
+    title: "Our Services",
     description:
       "We provide comprehensive evaluations and individualized treatment plans to patients ranging from 2 years to 100 years old. We also offer a monthly book club for patients and caregivers with aphasia.",
   },
   gettingStarted: {
     title: "Getting Started",
     description:
-      "What’s the process? Getting started can seem overwhelming, but as a small independently operating practice, we try to make it as easy as possible.",
+      "What’s the process? Getting started can seem overwhelming but since we are a small independently operating practice, we try to make it as easy as possible.",
     steps: [
       {
         title: "Step 1",
@@ -192,7 +188,7 @@ export const servicesContent = {
     {
       title: "Evaluations",
       description:
-        "Evaluations are required for all new patients to determine areas of need, develop a treatment plan, and recommend individualized goals.",
+        "Evaluations are required for all new patients to determine areas of need, develop a treatment plan, and recommend goals that are individualized to the client's needs.",
       items: [
         "Pediatric articulation",
         "Accent modification",
@@ -209,33 +205,29 @@ export const servicesContent = {
       description:
         "Therapy sessions are provided one on one in the office or via telepractice to in-state residents.",
       items: [
-        "Articulation and speech sound production",
-        "Dysphagia and swallow support",
+        "Articulation/slurred speech",
+        "Dysphagia",
         "Learning new words",
         "Asking and answering questions",
-        "Aphasia after stroke or brain-related injury",
-        "Foreign accent modification or reduction",
-        "Voice changes related to neurological disorders",
-        "Training on AAC device use",
+        "Aphasia",
+        "Foreign accent modification",
+        "Voice changes from neurological disorders",
+        "AAC device training",
       ],
     },
     {
       title: "Book Club",
       description:
-        "We host a monthly aphasia-friendly book club for patients and members of the community every third Friday of the month at 1:00 PM.",
-      items: [
-        "Encourages aphasia-friendly cueing strategies",
-        "Creates opportunities for communication and social interaction",
-        "Supports patients, caregivers, friends, and the wider community",
-      ],
+        "We host a monthly aphasia friendly book club for patients and members of the community every third Friday of the month at 1:00PM. We encourage patients, friends, caregivers, and the community to use aphasia friendly cueing strategies and offer opportunities for communication, social interactions, and group support.",
+      items: [],
       image:
         "/legacy/images.squarespace-cdn.com/content/v1/644281148cd62262058dd198/d9541303-a9d0-40a4-8f75-70456f760f30/aphasia+book+club+flyer-coming+soon.png",
     },
   ],
   cta: {
-    title: "Ready to get scheduled?",
+    title: "Ready to start? Let’s talk!",
     description:
-      "Book an appointment or reach out with questions and we’ll help you find the right next step.",
+      "We verify insurance benefits and eligibility for BCBS and UHC.",
     primaryLabel: "Book An Appointment",
     primaryHref: "/book-appointment",
     secondaryLabel: "Contact Us",
@@ -305,9 +297,9 @@ export const teamContent = {
     ],
   },
   cta: {
-    title: "Interested in joining the Kinetic Speech team?",
+    title: "Ready to start? Let's talk!",
     description:
-      "Reach out to talk through openings, growth opportunities, or office space options.",
+      "We verify insurance benefits and eligibility for BCBS and UHC.",
     buttonLabel: "Contact Us",
     buttonHref: "/contact-us",
   },
@@ -320,7 +312,7 @@ export const contactContent = {
   intro: {
     title: "Please send us your inquiry by filling in the contact form.",
     description:
-      "Follow us on our social media accounts to keep up to date on important messages, closures, or for tips to use at home.",
+      "Follow us on our social media accounts to keep up to date on important messages, closures, or for tips to use at home!",
   },
   form: {
     insuranceOptions: [
@@ -356,7 +348,7 @@ export const bookingContent = {
   intro: {
     title: "Book an appointment",
     description:
-      "Give us a call to schedule an evaluation or click below to get started.",
+      "Give us a call to schedule an evaluation or click on 'Book an Appointment.'",
   },
   acceptedPlans: [
     "Medicare Part B",
@@ -364,12 +356,10 @@ export const bookingContent = {
     "United Healthcare",
   ],
   notes: [
-    "Payment is due at the time of service.",
-    "For out-of-network services, we provide a superbill and do not submit reimbursements on your behalf.",
-    "We make no guarantees that services will be reimbursed, as insurance providers and plans may differ.",
+    "Payment is due at the time of service. For out of network services, we provide you a superbill as we do not submit for reimbursements on your behalf.",
   ],
   schedulingNote:
-    "Please reach out to (832) 278-1955 to schedule your appointment with us.",
+    "Please reach out to (832) 278-1955 to schedule your appointment with us",
   cta: {
     title: "Ready to start? Let’s talk!",
     description:

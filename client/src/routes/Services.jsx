@@ -32,7 +32,6 @@ export default function Services() {
     <Layout>
       <section className="servicesHero pageSection">
         <div className="servicesHero__heading">
-          <p className="pageEyebrow">{servicesContent.title}</p>
           <h1 className="servicesHero__title">{servicesContent.intro.title}</h1>
           <p className="servicesHero__description">
             {servicesContent.intro.description}
@@ -44,9 +43,6 @@ export default function Services() {
         <div className="servicesProcess__intro">
           <h2>{servicesContent.gettingStarted.title}</h2>
           <p>{servicesContent.gettingStarted.description}</p>
-          <Link to="/book-appointment" className="siteButton">
-            Book An Appointment
-          </Link>
         </div>
 
         <div className="servicesProcess__accordionWrap">
@@ -60,7 +56,7 @@ export default function Services() {
 
       <section className="servicesDetails pageSection">
         <div className="sectionHeading">
-          <p>Support tailored to your needs</p>
+          <p>{servicesContent.title}</p>
         </div>
 
         <div className="servicesCards">
@@ -68,11 +64,13 @@ export default function Services() {
             <article key={group.title} className="servicesCard">
               <h2>{group.title}</h2>
               <p>{group.description}</p>
-              <ul>
-                {group.items.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
+              {group.items.length > 0 ? (
+                <ul>
+                  {group.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              ) : null}
               {group.note ? (
                 <p className="servicesCard__note">{group.note}</p>
               ) : null}
@@ -88,26 +86,8 @@ export default function Services() {
         </div>
       </section>
 
-      <section className="imageCtaBand">
-        <div className="imageCtaBand__imageWrap">
-          <img
-            src={servicesContent.bandImage}
-            alt=""
-            className="imageCtaBand__image"
-          />
-          <WaveDivider className="imageCtaBand__divider" />
-        </div>
-      </section>
-
-      <section className="imageCtaBand">
-        <div className="imageCtaBand__imageWrap">
-          <img
-            src={servicesContent.bandImage2}
-            alt=""
-            className="imageCtaBand__image"
-          />
-          <WaveDivider className="imageCtaBand__divider" />
-        </div>
+      <section className="waveDividerBand">
+        <WaveDivider className="waveDividerBand__divider" />
       </section>
 
       <section className="homeCta">

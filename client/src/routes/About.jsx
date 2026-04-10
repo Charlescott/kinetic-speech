@@ -18,8 +18,7 @@ export default function About() {
     <Layout>
       <section className="aboutHero pageSection">
         <div className="aboutHero__heading">
-          <p className="pageEyebrow">About Us</p>
-          <h1 className="aboutHero__title">{aboutContent.introTitle}</h1>
+          <h1 className="aboutHero__title">{aboutContent.title}</h1>
         </div>
 
         <div className="aboutHero__grid">
@@ -32,49 +31,15 @@ export default function About() {
           </div>
 
           <div className="aboutHero__body">
-            {aboutContent.paragraphs.slice(0, 2).map((paragraph) => (
+            {aboutContent.paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="aboutStory pageSection">
-        <div className="aboutStory__content">
-          {aboutContent.paragraphs.slice(2).map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
-          ))}
-        </div>
-      </section>
-
-      <section className="aboutHighlights pageSection">
-        <div className="sectionHeading">
-          <p>Experience, training, and community connection</p>
-        </div>
-
-        <div className="aboutHighlights__grid">
-          {aboutContent.highlights.map((group) => (
-            <article key={group.title} className="aboutHighlightCard">
-              <h2>{group.title}</h2>
-              <ul>
-                {group.items.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="imageCtaBand">
-        <div className="imageCtaBand__imageWrap">
-          <img
-            src={aboutContent.bandImage}
-            alt=""
-            className="imageCtaBand__image"
-          />
-          <WaveDivider className="imageCtaBand__divider" />
-        </div>
+      <section className="waveDividerBand">
+        <WaveDivider className="waveDividerBand__divider" />
       </section>
 
       <section className="homeCta">
